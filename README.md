@@ -54,6 +54,4 @@ Want to try Melty? Sign up here, and we'll get you early access:
 
 ### [Get Early Access](https://docs.google.com/forms/d/e/1FAIpQLSc6uBe0ea26q7Iq0Co_q5fjW2nypUl8G_Is5M_6t8n7wZHuPA/viewform)
 
-[Twitter embed: https://twitter.com/charliebholtz/status/1825647665776046472]
-
-### [Star on GitHub](https://github.com/meltylabs/melty)
+https://twitter.com/charliebholtz/status/1825647665776046472
