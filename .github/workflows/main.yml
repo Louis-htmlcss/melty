@@ -1,0 +1,33 @@
+name: Build VSCode for Windows
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: |
+        npm install -g yarn
+        yarn
+
+    - name: Build VSCode
+      run: yarn run gulp vscode-win32-x64
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: vscode-win32-x64
+        path: .build/win32-x64
