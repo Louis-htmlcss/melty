@@ -1,7 +1,7 @@
 name: Build and Package VSCode
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:  # Permet de déclencher le workflow manuellement
 
 jobs:
   build:
@@ -9,12 +9,12 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3  # Mise à jour vers la version 3
 
     - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3  # Mise à jour vers la version 3
       with:
-        node-version: '14'
+        node-version: '20'
 
     - name: Install dependencies
       run: npm install
@@ -26,7 +26,7 @@ jobs:
       run: npm run dist
 
     - name: Upload .exe
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3  # Mise à jour vers la version 3
       with:
         name: my-app-executable
         path: ./dist/*.exe
