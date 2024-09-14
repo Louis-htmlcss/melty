@@ -9,15 +9,15 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3  # Mise à jour vers la version 3
+      uses: actions/checkout@v3
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3  # Mise à jour vers la version 3
+      uses: actions/setup-node@v3
       with:
         node-version: '20'
 
     - name: Install dependencies
-      run: npm install
+      run: npm install --legacy-peer-deps  # Utilisation de l'option pour ignorer les conflits
 
     - name: Build application
       run: npm run build
@@ -26,7 +26,7 @@ jobs:
       run: npm run dist
 
     - name: Upload .exe
-      uses: actions/upload-artifact@v3  # Mise à jour vers la version 3
+      uses: actions/upload-artifact@v3
       with:
         name: my-app-executable
         path: ./dist/*.exe
