@@ -16,14 +16,17 @@ jobs:
       with:
         node-version: '20'
 
+    - name: Install Yarn
+      run: npm install --global yarn  # Installer Yarn globalement
+
     - name: Install dependencies
-      run: npm install --legacy-peer-deps  # Utilisation de l'option pour ignorer les conflits
+      run: yarn install  # Utiliser Yarn pour installer les dépendances
 
     - name: Build application
-      run: npm run build
+      run: yarn build  # Utiliser Yarn pour construire l'application
 
     - name: Package application
-      run: npm run dist
+      run: yarn dist  # Utiliser Yarn pour empaqueter l'application
 
     - name: Upload .exe
       uses: actions/upload-artifact@v3
